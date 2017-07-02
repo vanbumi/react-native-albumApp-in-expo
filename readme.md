@@ -34,4 +34,11 @@ Update the class App on main.js
 
 Save and check on device :)
 
-next 22
+## v22 File Export
+
+## v23 Styling
+
+## v24 Styling Component
+
+## v25 Intro to Flexbox
+

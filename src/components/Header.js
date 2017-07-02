@@ -1,8 +1,23 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 const Header = () => {
-  return <Text>AlbumApp!</Text>
+  const { textStyle, viewStyle } = styles;
+
+  return (
+    <View style={viewStyle}>
+      <Text style={textStyle}>Album</Text>
+    </View>
+    )
+};
+
+const styles = {
+  viewStyle: {
+    backgroundColor: '#f8f8f8'
+  },
+  textStyle: {
+    fontSize: 20
+  }
 };
 
 export default Header;
