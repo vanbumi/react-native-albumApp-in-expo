@@ -5,7 +5,7 @@ import Header from './src/components/Header';
 class App extends React.Component {
   render() {
     return (
-      <Header />
+      <Header headerText={ 'Album Ku' } />
     );
   }
 }
