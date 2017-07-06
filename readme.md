@@ -62,5 +62,20 @@ install axios
 
     npm install --save axios
 
-## 34 Component Level State    
+## 34 Component Level State
 
+## 35 State Continue
+
+**State** adalah konsep untuk update data didalam sebuah component.
+**Initial state** mengindisikan kondisi awal sebuah component atau sebuah object.
+
+#### State:
+
+* Plain JavaScript Object yang digunakan untuk merekam dan merespond *trigered events* dari User.
+* Jika ingin mengupdate tampilan sebuah Component gunakan **'this.setState'**.
+* Merubah State hanya gunakan **'setState'**, bukan dengan 'this.state', contoh: this.state = 123;
+* State hanya bisa di gunakan pada **'Class base component'** bukan 'functional component'.
+
+#### Props
+
+* Props (property) digunakan untuk melakukan **komunikasi** antara **parents** dengan **child** component.
