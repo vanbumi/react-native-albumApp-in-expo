@@ -71,11 +71,45 @@ install axios
 
 #### State:
 
-* Plain JavaScript Object yang digunakan untuk merekam dan merespond *trigered events* dari User.
+* Plain JavaScript Object yang digunakan untuk merekam dan merespond *trigered events* dari User. Internal component record keeping.
 * Jika ingin mengupdate tampilan sebuah Component gunakan **'this.setState'**.
 * Merubah State hanya gunakan **'setState'**, bukan dengan 'this.state', contoh: this.state = 123;
 * State hanya bisa di gunakan pada **'Class base component'** bukan 'functional component'.
 
 #### Props
 
-* Props (property) digunakan untuk melakukan **komunikasi** antara **parents** dengan **child** component.
+* Props (property) digunakan untuk melakukan **komunikasi** antara **parents** dengan **child** component -> Parent to Child Communication. 
+
+## 36 Render List Component
+
+Dalam menggunakan State hanya bisa dilakukan untuk Component 'Class' base, bukan 'Funtion' base.
+
+Contoh: 
+
+    class AlbumList extends Component {
+      ..........
+    }
+
+#### Penggunaan method *map* pada RN
+
+**map** method digunakan untuk mentransformasikan array menjadi masing-masing object (each).
+Biasanya setelah melakukan fetching data kemudian di distribusikan (map) menjadi masing-masing bagian object.
+
+##### Membuat method dengan map
+
+Pada file AlbumList.js buat helper method, kita namakan renderAlbums
+
+    renderAlbums() {
+      return this.state.albums.map(album => <Text>{album.title}</Text>); 
+    }  
+
+dan update render method agar bisa menampilkan album list, menjadi:
+
+    render() {
+      return (
+        <View>{this.renderAlbums()}</View>
+      );
+    } 
+
+Coba di screen simulator!
+

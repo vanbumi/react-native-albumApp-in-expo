@@ -9,17 +9,21 @@ class AlbumList extends Component {
     axios.get('https://rallycoding.herokuapp.com/api/music_albums')
       .then(response => this.setState({ albums: response.data }));
   }
+  
+  // create map method
+  renderAlbums() {
+    return this.state.albums.map(album => <Text>{album.text}</Text> );
+  }
 
   render () {
     console.log(this.state);
-    
+
     return (
-      <View>
-        <Text>Album List ku</Text>
+     <View>
+        {this.renderAlbums()}
       </View>
     );
   }
 }
 
 export default AlbumList;
-
