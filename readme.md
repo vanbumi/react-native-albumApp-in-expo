@@ -46,4 +46,17 @@ Save and check on device :)
 
 ## v27 Header Reusable
 
-## v28
+## v28 Source Album Data
+
+## v29
+
+## v30
+
+## v31 Lifecycle Method
+
+## 32 - 33 Network Request
+
+install axios
+
+    npm install --save axios
+
