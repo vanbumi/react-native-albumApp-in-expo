@@ -119,3 +119,5 @@ Coba di screen simulator!
 
 ## 39 Style Card
 
+## 40 Pass Component as Props
+
