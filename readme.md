@@ -128,3 +128,5 @@ Coba di screen simulator!
 ## 43 Positioning Element
 
 ## 44 More Style
+
+## 45 Add Image
