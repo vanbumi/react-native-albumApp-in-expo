@@ -121,3 +121,7 @@ Coba di screen simulator!
 
 ## 40 Pass Component as Props
 
+## 41 Divide Card into Section
+
+## 42 Flexbox
+
