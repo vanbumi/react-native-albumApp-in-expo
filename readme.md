@@ -113,3 +113,5 @@ dan update render method agar bisa menampilkan album list, menjadi:
 
 Coba di screen simulator!
 
+## 37 Display Individual Album
+
