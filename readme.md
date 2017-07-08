@@ -115,3 +115,7 @@ Coba di screen simulator!
 
 ## 37 Display Individual Album
 
+## 38 Reusable Component
+
+## 39 Style Card
+
