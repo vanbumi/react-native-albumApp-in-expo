@@ -142,3 +142,7 @@ Coba di screen simulator!
 ## 50 Responding user input
 
 ## 51 Link between mobile app
+
+## 52 Set button text with props
+
+## 53 Last
