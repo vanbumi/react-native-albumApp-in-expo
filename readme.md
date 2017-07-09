@@ -130,3 +130,5 @@ Coba di screen simulator!
 ## 44 More Style
 
 ## 45 Add Image
+
+## 46 Display Image

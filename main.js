@@ -7,7 +7,7 @@ import AlbumList from './src/components/AlbumList';
 class App extends React.Component {
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
         <Header headerText={ 'Album Ku' } />
         <AlbumList />
       </View>
