@@ -145,6 +145,28 @@ So Update lagi style nya:
 
 ## v27 Header Reusable
 
+Statik header title (hard coded)
+
+    <Text>style={textStyle}>Album App</Text>
+
+Kita ingin header dinamis --> berganti title --> header menjadi reusable.
+
+**Refactor! Parents component to Children component with Props sistem**
+
+Dari main.js <-- root / parent
+
+    <Header headerText={ 'Album Ku' } />
+
+Pada Header.js, menambahkan props object dari parents component:
+
+    <Text style={textStyle}>{props.headerText}</Text>
+
+> catatan* insert javascript variable pada JSX harus diapit dengan **{ }**.
+
+Dan menambahkan reference props, pada function argumentnya:
+
+    const Header = (props) => {
+
 ## v28 Source Album Data
 
 ## v29
