@@ -86,16 +86,7 @@ Update Header.js
         fontSize: 20
       },
       viewStyle: {
-        backgroundColor: '#f8f8f8',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 60,
-        paddingTop: 15,
-        shadowColor: '#000',
-        shadowOffset: { width: 1, height: 2 },
-        shadowOpacity: 0.9,
-        elevation: 2,
-        position: 'relative'
+        backgroundColor: '#f8f8f8'
       }
     };  
        
@@ -129,7 +120,28 @@ Mengatur posisi element children oleh parent, parent -> children.
 
 ![10-aligIitem-flex-end](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_223,w_350/v1499958048/albums-app/10-aligIitem-flex-end.png)
 
-## v26 Header Styling
+## Header Styling
+
+So Update lagi style nya:
+
+    const styles = {
+      textStyle: {
+        fontSize: 20
+      },
+      viewStyle: {
+        backgroundColor: '#f8f8f8',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 60,
+        paddingTop: 15
+        ----------------------> test di screen
+        shadowColor: '#000',
+        shadowOffset: { width: 1, height: 2 },
+        shadowOpacity: 0.9,
+        elevation: 2,
+        position: 'relative'
+      }
+    };
 
 ## v27 Header Reusable
 
