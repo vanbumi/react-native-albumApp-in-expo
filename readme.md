@@ -1,10 +1,17 @@
-# React Native - albumApp in Expo
+# React Native - AlbumApp dengan Expo
 
 ## Get Start
 
+Gambaran App yang akan dibuat:
+
+![app-outline](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_422,w_300/v1499935793/albums-app/2-Outline_app.png)
+
 * Install Expo Desktop
 * Install Expo App
-* In Expo Desktop create new project
+* In Expo Desktop create new project or in Commandline: 
+    
+    exp init namaApp 
+
 * Open in your IDE to edit.
 
 ## Create Header component
@@ -13,16 +20,20 @@ Create new folder named src
 Create new folder named src/components
 Create new file named src/components/Header.js
 
+Tuliskan kode seperti dibawah ini:
+
     import React from 'react';
     import { Text } from 'react-native';
 
     const Header = () => {
-      return <Text>AlbumApp!</Text>
+      return <Text>Album App</Text>
     };
 
     export default Header;
 
 Update the class App on main.js
+
+    import Header from './src/components/Header';
 
     class App extends React.Component {
       render() {
@@ -34,13 +45,89 @@ Update the class App on main.js
 
 Save and check on device :)
 
-## v22 File Export
+## Add Style
 
-## v23 Styling
+Create JavaScript object for stylist :
 
-## v24 Styling Component
+    const styles = {
+      textStyle: {
+        fontSize: 20
+      }      
+    };
 
-## v25 Intro to Flexbox
+Update Header.js
+
+    const Header = () => {
+      const { textStyle } = styles;
+
+      return <Text style={textStyle}>Album App</Text>
+    };    
+
+### Add View Tag to wrap Text Tag
+
+![3-wrap-with-view-tag](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_174,w_350/v1499954927/albums-app/3-wrap-with-view-tag.png)
+
+Update Header.js
+
+    const Header = () => {
+      const { textStyle, viewStyle } = styles;
+
+      return (
+        <View style={viewStyle}>
+          <Text>style={textStyle}>Album App</Text>
+        </View>
+      )
+    };
+
+ Update style nya:
+
+    const styles = {
+      textStyle: {
+        fontSize: 20
+      },
+      viewStyle: {
+        backgroundColor: '#f8f8f8',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 60,
+        paddingTop: 15,
+        shadowColor: '#000',
+        shadowOffset: { width: 1, height: 2 },
+        shadowOpacity: 0.9,
+        elevation: 2,
+        position: 'relative'
+      }
+    };  
+       
+## Mengatur Posisi Element dengan Flexbox
+
+**Flexbox** adalah sistim positioning element didalam container.
+Mengatur posisi element children oleh parent, parent -> children.
+**View Tag -> Text Tag**
+
+### Position Default.
+
+![4-default-position](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_231,w_350/v1499956644/albums-app/4-default-position.png)
+
+### justifyContent.
+
+**justifyContent** digunakan untuk mengatur posisi secara Vertikal.
+
+![5-justify-content](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_218,w_350/v1499957054/albums-app/5-justify-content.png)
+
+![6-justifyConten-center](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_219,w_350/v1499957301/albums-app/6-justifyConten-center.png)
+
+![7-justifyConten-flex-start](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_221,w_350/v1499957471/albums-app/7-justifyConten-flex-start.png)
+
+### alignItems
+
+**alignItems** digunakan untuk mengatur posisi secara Vertikal.
+
+![8-aligIitem-flext-start](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_221,w_350/v1499957661/albums-app/8-aligIitem-flext-start.png)
+
+![9-aligIitem-center](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_224,w_350/v1499957926/albums-app/9-aligIitem-center.png)
+
+![10-aligIitem-flex-end](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_223,w_350/v1499958048/albums-app/10-aligIitem-flex-end.png)
 
 ## v26 Header Styling
 
