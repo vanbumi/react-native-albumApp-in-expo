@@ -561,7 +561,7 @@ Pada AlbumDetail kita ingin menempatkan CardSection di dalam Card component:
 
 Menjadi :
 
-     const AlbumDetails = (props) => {
+    const AlbumDetails = (props) => {
       return(
         <Card>
           <CardSection>
@@ -613,7 +613,91 @@ Untuk mengatur posisi header kita menggunakan FlexDirection: 'row', dengan mengg
 
 ![23-flexDirection-column](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_395,w_400/v1500032714/albums-app/23-flexDirection-column.png)
 
+Sekarang kit akan menerapkan style tsb diatas pada AlbumDetail.js:
 
+    const AlbumDetails = (props) => {
+      return(
+        <Card>
+          <CardSection>
+            <Text>{props.album.title}</Text>
+          </CardSection>
+        </Card>    
+      );  
+    }
+
+Update menjadi:
+
+    const AlbumDetails = (props) => {
+      return(
+        <Card>
+          <CardSection>
+            <View>
+              <Image />
+            </View>
+            <View>
+              <Text>{props.album.title}</Text>
+              <Text>{props.album.artist}</Text>
+            </View>
+          </CardSection>
+        </Card>    
+      );  
+    }
+
+Tambahkan style object:
+
+    const styles = {
+      headerContentStyle: {
+        flexDirection: 'column',
+        justifyContent: 'space-around'
+      }, // ----------------------------> test on screen!
+      headerTextStyle: {
+        fontSize: 18
+      },
+      thumbnailStyle: {
+        width: 50,
+        height: 50
+      },
+      thumbnailContainerStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 10,
+        marginRight: 10
+      },
+      imageStyle: {
+        height: 350,
+        flex: 1,
+        width: null
+      } 
+    };
+
+Import Image Tag
+
+    import { Text, View, Image } from 'react-native';
+
+Add image source:
+
+    <Image  source={{ uri: 'props.album.thumbnail_image' }} />
+            
+Gunakan destructure kode untuk good practice.
+
+Contoh :
+
+    const AlbumDetail = ({ album }) => {
+      const { title, artist, thumbnail_image, image, url } = album;
+      const { thumbnailContainerStyle, 
+        thumbnailStyle, 
+        headerContentStyle, 
+        headerTextStyle, imageStyle 
+        } = styles;
+
+Tambahkan Image style property:
+
+    <Image
+      style={thumbnailStyle} 
+      source={{ uri: thumbnail_image }
+    }/>
+
+Test di screen! :)
 
 
 
