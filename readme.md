@@ -188,11 +188,75 @@ Dimana AlbumList berisi beberapa AlbumDetail
 
 AlbumList component yang akan fetching data dari API, kemudian dirender ke masing-masing AlbumDetail component. AlbumDetail hanya bertugas untuk show single Card kepada user. 
 
+## Component Boiler Plate
+
+![12-diagram-fetching-data](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_390,w_700/v1499993800/albums-app/12-diagram-fetching-data.png)
+
+Gambar diatas memberikan gambaran bagaimana Nested Component berjalan, dimana add root, parent & children component berlaku.
+
+Ikuti Step berikut ini:
+
+Membuat component baru AlbumList.js folder src/components/AlbumList.js.
+
+Ada 2 jenis component di dalam React Native
+
+1. class base component:
+class base component adalah component Dinamic, digunakan untuk interaktif user dan fetching data. 
+2. functional base component:
+functional base componet adalah component Statik, di gunakan untuk display data ke user.
+
+Component AlbumList -> class base component -> fetching data -> Ajax request -> provider API.
+
+Component class base **Boilerplate!**
+
+    import React, { Component } from 'React';
+    import { View, Text } from 'react-native';
+
+    class AlbumList extends Component {
+      render() {
+        return (
+           <View>
+            <Text>Album List</Text>
+           </View> 
+        );
+      }
+    }
+
+    export default AlbumList;
+
+Pada main.js import AlbumList:
+
+Update main.js menjadi sbb:
+
+    import Expo from 'expo';
+    import React from 'react';
+    import { View } from 'react-native';
+    import Header from './src/components/Header';
+    import AlbumList from './src/components/AlbumList';
+
+Cara menempatkan AlbumList Tag di dalam main/App.js :
+
+    class App extends React.Component {
+      render() {
+        return (
+          <View}>
+            <Header headerText={ 'Album Ku' } />
+            <AlbumList />
+          </View>
+        );
+      }
+    }
+
+Didalam penulisan JSX berlaku 1 component hanya terdapat 1 single JSX Tag, jadi apabila ada 2 component Tag harus diapit oleh View Tag, lihat contoh diatas.
+
+Pada main.js jangan lupa View Tag di import bila belum:
+
+    import { View } from 'react-native';
+
+Test di pada device !
 
 
 
-
-## v29
 
 ## v30
 
