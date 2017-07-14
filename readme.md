@@ -583,9 +583,24 @@ Sekali lagi kita ingin melewatkan isi dari CardSection ke dalam CardSection comp
 
 Dan Test di screen device :)
 
+Kurang lebih akan tampak seperti dibawah ini :
+
+![17-cardSection](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_235,w_300/v1500024914/albums-app/17-cardSection.png)
+
+## Membuat Tampilan Header
+
+![18-diagram-header](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_250,w_350/v1500025173/albums-app/18-diagram-header.png)
+
+Goalnya adalah bagaimana cara membuat layout seperti pada gambar, bila kita layout pada web mungkin akan terlihat lebih mudah menggunakan DIV dan CSS bila dibanding layout mobile aplikasi :)
+
+### Memperkenalkan Flexbox
+
+![19-justifyContent-space-between](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_251,w_350/v1500025749/albums-app/19-justifyContent-space-between.png)
+
+![20-justifyContent-space-around](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_250,w_350/v1500025955/albums-app/20-justifyContent-space-around.png)
 
 
-## 42 Flexbox
+
 
 ## 43 Positioning Element
 
