@@ -432,9 +432,51 @@ Pada AlbumDetail.js update kode nya dengan menambahkan props pada argument perta
       );  
     }
 
-## 38 Reusable Component
+## Bekerja dengan AlbumDetail.
 
-## 39 Style Card
+![16-create-card-component](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_310,w_350/v1500016693/albums-app/16-create-card-component.png)
+
+### Membuat Card Component.
+
+Boilerplate: 
+
+    import React from 'react';
+    import { View } from 'react-native';
+
+    const Card = () => {
+      return(
+        <View></View>
+      );
+    };
+
+    export default card;
+
+### Style Card
+
+    const styles = {
+      containerStyle: {
+        borderWidth: 1,
+        borderRadius: 2,
+        borderColor: '#ddd',
+        borderBottomWidth: 0,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2},
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 1,
+        marginLeft: 5,
+        marginRight: 5,
+        marginTop: 10
+      }
+    };
+
+Update const Card menjadi: 
+
+    const Card = () => {
+      return(
+        <View style={styles.containerStyle}></View>
+      );
+    };
 
 ## 40 Pass Component as Props
 
