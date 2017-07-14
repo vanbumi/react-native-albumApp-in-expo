@@ -508,9 +508,82 @@ Update Card.js
 
 Test pada screen device :)
 
+## Membagi Card kedalam Section
+
+Membuat component baru di folder src/components/CardSection:
+
+    import React from 'react';
+    import { View } from 'react-native';
+
+    const CardSection = () => {
+      return (
+        <View></View>
+      );
+    };
+
+    export default CardSection;
+
+Membuat object style:
+
+    const styles = {
+      containerStyle: {
+        borderBottomWidth: 1,
+        padding: 5,
+        backgroundColor: '#fff',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        position: 'relative'
+      }
+    };
+
+Update View Tag nya:
+
+    const CardSection = () => {
+      return (
+        <View style={styles.containerStyle }></View>
+      );
+    };
+
+Pada AlbumDetail.js import CardSection :
+
+    import CardSection from './CardSection';
+
+Pada AlbumDetail kita ingin menempatkan CardSection di dalam Card component:
+
+    const AlbumDetails = (props) => {
+      return(
+        <Card>
+          <Text>{props.album.title}</Text>
+          // CardSection here
+        </Card>    
+      );  
+    }
+
+Menjadi :
+
+     const AlbumDetails = (props) => {
+      return(
+        <Card>
+          <CardSection>
+            <Text>{props.album.title}</Text>
+          </CardSection>
+        </Card>    
+      );  
+    }   
+
+Sekali lagi kita ingin melewatkan isi dari CardSection ke dalam CardSection component dengan menggunakan props, update CardSection.js menjadi sbb:
+
+    const CardSection = (props) => {
+      return (
+        <View style={styles.containerStyle }>
+          {props.children}
+        </View>
+      );
+    };
+
+Dan Test di screen device :)
 
 
-## 41 Divide Card into Section
 
 ## 42 Flexbox
 
