@@ -301,7 +301,9 @@ Saat kita melakukan Ajax request akan return "promise" melalui asynchronous call
 
 Disinilah **state** dibutuhkan --> menyimpan status data sebelumnya:
 
-    state = { albums: [] };  // album dengan empty array.
+    state = { albums: [] };  // album dengan default empty array.
+
+*albums dengan 's' --> plural.*
 
 Tambahkan defautl state (initial state) tsb pada component AlbumList sebelum componentWillMount.
 
@@ -332,24 +334,34 @@ Contoh:
       ..........
     }
 
-### Penggunaan method *map* pada RN
+### Penggunaan method *map* pada React Native
 
-**map** method digunakan untuk mentransformasikan array menjadi masing-masing object (each).
-Biasanya setelah melakukan fetching data kemudian di distribusikan (map) menjadi masing-masing bagian object.
+![15-each-map-sistem](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_400,w_350/v1500012103/albums-app/15-each-map-sistem.png)
+
+Gambar sebelah kiri --> array album (terdiri dari each album).
+
+**map** adalah *array helper*, method **map** digunakan untuk mentransformasikan array menjadi masing-masing object (each).
+Setelah melakukan fetching data kemudian di distribusikan (map) menjadi masing-masing **albumDetail** component.
 
 ### Membuat method dengan map
 
-Pada file AlbumList.js buat helper method, kita namakan renderAlbums
+Pada file AlbumList.js buat helper method, kita namakan **renderAlbums**
 
     renderAlbums() {
       return this.state.albums.map(album => <Text>{album.title}</Text>); 
     }  
 
-dan update render method agar bisa menampilkan album list, menjadi:
+*albums dengan 's' --> plural.*
+
+renderAlbum --> return --> state hasil fetching albums --> didistribusikan dengan "key" **album**, sehingga masing-masing object bisa ditampilkan dengan "key" tsb --> album.title.
+
+Update **render method** agar bisa menampilkan album list, ganti Text Tab menjadi:
 
     render() {
       return (
-        <View>{this.renderAlbums()}</View>
+        <View>
+          {this.renderAlbums()}
+        </View>
       );
     } 
 
