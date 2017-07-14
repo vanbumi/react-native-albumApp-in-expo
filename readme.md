@@ -65,7 +65,7 @@ Update Header.js
 
 ### Add View Tag to wrap Text Tag
 
-![3-wrap-with-view-tag](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_174,w_350/v1499954927/albums-app/3-wrap-with-view-tag.png)
+![3-wrap-with-view-tag](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_124,w_300/v1499954927/albums-app/3-wrap-with-view-tag.png)
 
 Update Header.js
 
@@ -262,6 +262,7 @@ Test di pada device !
 * Kapan? -> saat App boots up! or load!
 * Bagaimana caranya? -> Hook atau event notification -> **lifecycle method**.
 * **componentWillMount()**
+* Menggunakan library -> Axios.
 
 Update AlbumList.js :
 
@@ -279,41 +280,51 @@ Update AlbumList.js :
       }
     }
 
-
-
-
-
-## v31 Lifecycle Method
-
-## 32 - Axios
-
-## 33 Network Request
-
-install axios
+### Install Axios
 
     npm install --save axios
 
-## 34 Component Level State
+Fungsi axios adalah melakukan http request untuk fetching data.
 
-## 35 State Continue
+Pada AlbumList.js import axios:
 
-**State** adalah konsep untuk update data didalam sebuah component.
-**Initial state** mengindisikan kondisi awal sebuah component atau sebuah object.
+    import axios from 'axios';
 
-#### State:
+Dan update componentWillMount nya menjadi sbb:
 
-* Plain JavaScript Object yang digunakan untuk merekam dan merespond *trigered events* dari User. Internal component record keeping.
-* Jika ingin mengupdate tampilan sebuah Component gunakan **'this.setState'**.
-* Merubah State hanya gunakan **'setState'**, bukan dengan 'this.state', contoh: this.state = 123;
+    componentWillMount() {
+      axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+        .then(response => this.setState({ albums: response.data }));
+    }    
+
+Saat kita melakukan Ajax request akan return "promise" melalui asynchronous call, pada saat request selesai maka akan ditampilkan respon data, respon data inilah akan menimpa state yang sebelumnya (default) sehingga terjadi update data --> album list.
+
+Disinilah **state** dibutuhkan --> menyimpan status data sebelumnya:
+
+    state = { albums: [] };  // album dengan empty array.
+
+Tambahkan defautl state (initial state) tsb pada component AlbumList sebelum componentWillMount.
+
+### Component Level State
+
+![14-component-level-state](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_350,w_450/v1500002440/albums-app/14-component-level-state.png)
+
+### Rule of State
+
+* **Definis State** : adalah plain JavaScript object yang digunakan untuk merecord dan merespond user event.
+* Saat kita ingin mengupdate tampilan dari component gunakan call **"this.setState"**.
+* Hanya gunakan **setState** untuk merubah State, jangan gunakan 'this.state'.
+* **State** adalah konsep untuk update data didalam sebuah component.
+* **Initial state** mengindisikan kondisi awal sebuah component atau sebuah object.
 * State hanya bisa di gunakan pada **'Class base component'** bukan 'functional component'.
 
-#### Props
+### Props
 
 * Props (property) digunakan untuk melakukan **komunikasi** antara **parents** dengan **child** component -> Parent to Child Communication. 
 
-## 36 Render List Component
+## Render List Component
 
-Dalam menggunakan State hanya bisa dilakukan untuk Component 'Class' base, bukan 'Funtion' base.
+Dalam menggunakan State hanya bisa dilakukan untuk Component 'Class' base, bukan 'Funtionc' base.
 
 Contoh: 
 
@@ -321,12 +332,12 @@ Contoh:
       ..........
     }
 
-#### Penggunaan method *map* pada RN
+### Penggunaan method *map* pada RN
 
 **map** method digunakan untuk mentransformasikan array menjadi masing-masing object (each).
 Biasanya setelah melakukan fetching data kemudian di distribusikan (map) menjadi masing-masing bagian object.
 
-##### Membuat method dengan map
+### Membuat method dengan map
 
 Pada file AlbumList.js buat helper method, kita namakan renderAlbums
 
@@ -342,7 +353,7 @@ dan update render method agar bisa menampilkan album list, menjadi:
       );
     } 
 
-Coba di screen simulator!
+Test pada screen device!
 
 ## 37 Display Individual Album
 
