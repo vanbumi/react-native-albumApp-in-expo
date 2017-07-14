@@ -143,9 +143,9 @@ So Update lagi style nya:
       }
     };
 
-## v27 Header Reusable
+## Header Reusable
 
-Statik header title (hard coded)
+Ini adalah Statik Header Title (hard coded)
 
     <Text>style={textStyle}>Album App</Text>
 
@@ -167,7 +167,30 @@ Dan menambahkan reference props, pada function argumentnya:
 
     const Header = (props) => {
 
-## v28 Source Album Data
+## Cara membuat List Data untuk Album App
+
+Hard coding ? No!
+
+Kita akan mengkonsumsi dari dari sistem online API dengan method HTTP Request.
+
+    https://rallycoding.herokuapp.com/api/music_albums
+
+untuk memudahkan membaca json gunakan plugin **JSON Formatter**.
+
+Component yang akan kita buat adalah
+
+* AlbumList
+* AlbumDetail
+
+Dimana AlbumList berisi beberapa AlbumDetail
+
+![11-diagram-albumList](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_537,w_250/v1499961860/albums-app/11-diagram-albumList.png)
+
+AlbumList component yang akan fetching data dari API, kemudian dirender ke masing-masing AlbumDetail component. AlbumDetail hanya bertugas untuk show single Card kepada user. 
+
+
+
+
 
 ## v29
 
