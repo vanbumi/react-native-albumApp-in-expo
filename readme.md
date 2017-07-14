@@ -438,6 +438,8 @@ Pada AlbumDetail.js update kode nya dengan menambahkan props pada argument perta
 
 ### Membuat Card Component.
 
+Pada folder src/components/Card.js
+
 Boilerplate: 
 
     import React from 'react';
@@ -449,9 +451,9 @@ Boilerplate:
       );
     };
 
-    export default card;
+    export default card;   
 
-### Style Card
+### Membuat Style pada Card
 
     const styles = {
       containerStyle: {
@@ -478,7 +480,35 @@ Update const Card menjadi:
       );
     };
 
-## 40 Pass Component as Props
+Pada AlbumDetails jangan lupa Card.js di import:
+
+    import Card from './AlbumDetail' 
+
+Konsekuensi nya update AlbumDetail.js dengan menambahkan Card Tag menjadi instant Card component :
+
+    const AlbumDetails = (props) => {
+      return(
+        <Card>
+          <Text>{props.album.title}</Text>
+        </Card>    
+      );  
+    }
+
+Konsekuensi yang ke 2 apapun yang terdapat didalam Tag Card dapat dilewatkan ke Card component syaratnya berada di Parents component --> Children component dengan cara melewatkan "props" kedalam function argument.
+
+Update Card.js
+
+    const Card = (props) => {
+      return(
+        <View style={styles.containerStyle}>
+          {props.children}
+        </View>
+      );
+    }; 
+
+Test pada screen device :)
+
+
 
 ## 41 Divide Card into Section
 
