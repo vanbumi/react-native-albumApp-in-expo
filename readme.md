@@ -593,11 +593,26 @@ Kurang lebih akan tampak seperti dibawah ini :
 
 Goalnya adalah bagaimana cara membuat layout seperti pada gambar, bila kita layout pada web mungkin akan terlihat lebih mudah menggunakan DIV dan CSS bila dibanding layout mobile aplikasi :)
 
-### Memperkenalkan Flexbox
+### Flexbox
 
 ![19-justifyContent-space-between](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_251,w_350/v1500025749/albums-app/19-justifyContent-space-between.png)
 
 ![20-justifyContent-space-around](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_250,w_350/v1500025955/albums-app/20-justifyContent-space-around.png)
+
+## FlexDirection
+
+### Ada 2 jenis flexDirection
+
+Dua jenis flexDirection yaitu row dan column, seperti gambar dibawah ini:
+
+![22-flexDirection-row-default](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_300,w_400/v1500031955/albums-app/22-flexDirection-row-default.png)
+
+Untuk mengatur posisi header kita menggunakan FlexDirection: 'row', dengan menggunakan 2 buah View Tag yang diapit 1 CardSection. Satu View Tag untuk image dan satu View Tag untuk Text, kemudian untuk View Text kita menggunakan flexDirection: 'column' dan justifyContent: 'space-around'.
+
+![21-penggunaan-flexDirection](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_412,w_400/v1500031648/albums-app/21-penggunaan-flexDirection.png)
+
+![23-flexDirection-column](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_395,w_400/v1500032714/albums-app/23-flexDirection-column.png)
+
 
 
 
