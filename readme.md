@@ -207,6 +207,8 @@ functional base componet adalah component Statik, di gunakan untuk display data 
 
 Component AlbumList -> class base component -> fetching data -> Ajax request -> provider API.
 
+![13-jenis-component](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_370,w_700/v1499995776/albums-app/13-jenis-component.png)
+
 Component class base **Boilerplate!**
 
     import React, { Component } from 'React';
@@ -255,10 +257,31 @@ Pada main.js jangan lupa View Tag di import bila belum:
 
 Test di pada device !
 
+## Cara fetching data dari API
+
+* Kapan? -> saat App boots up! or load!
+* Bagaimana caranya? -> Hook atau event notification -> **lifecycle method**.
+* **componentWillMount()**
+
+Update AlbumList.js :
+
+    class AlbumList extends Component {
+      componentWillMount() {
+        
+      }
+
+      render() {
+        return (
+           <View>
+            <Text>Album List</Text>
+           </View> 
+        );
+      }
+    }
 
 
 
-## v30
+
 
 ## v31 Lifecycle Method
 
