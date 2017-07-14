@@ -365,9 +365,72 @@ Update **render method** agar bisa menampilkan album list, ganti Text Tab menjad
       );
     } 
 
-Test pada screen device!
+Test pada screen device! sukses .... tapi Tampak warning! Karena masing-masing property object (component) harus memilik Uniq Key.
 
-## 37 Display Individual Album
+Kita update menjadi :
+
+    renderAlbums() {
+      return this.state.albums.map(album => 
+        <Text key={album.title}>{ album.title }</Text> 
+      );
+    }
+
+> Gunakan key sesuai dengan object component, bila aplikasi tidak memiliki object ID --> {album.id}.     
+Test lagi di screen --> warning akan hilang :)
+
+## Membuat Componen baru AlbumDetail.
+
+Pada folder src/components/AlbumDetail.js
+
+Tuliskan kode boilerplate RN:
+
+    import React from 'react';
+    import { View, Text} from 'react-native';
+
+    const AlbumDetails = () => {
+      return(
+        <View>
+          <Text>Album Detail</Text>
+        </View>    
+      );  
+    } 
+
+    export default AlbumDetail;
+
+Setelah itu jangan lupa import ke dalam component AlbumList.js
+
+    import AlbumDetail from './AlbumDetail';
+
+Konsekuensinya setelah di import kita harus menggantikan Text Tag dengan AlbumDetail Tag:
+
+    renderAlbums() {
+      return this.state.albums.map(album => 
+        <AlbumDetail key={album.title}>{ album.title }</AlbumDetail> 
+      );
+    }
+
+Karena kita tidak lagi menggunakan Text Tag maka kita bisa menghapus import Text di bagian atas import.
+
+Apabila kita lihat kode diatas ada nested component pada AlbumList component, antara AlbumList sebagai Parents dan AlbumDetail sebagai Children. 
+Selanjutnya kita akan melewatkan (pass) album dari Parents component ke Children component dengan menggunakan Props.
+
+Jadi kita harus update kode diatas menjadi:
+
+    renderAlbums() {
+      return this.state.albums.map(album => 
+        <AlbumDetail key={album.title} album={album} /> 
+      );
+    }
+
+Pada AlbumDetail.js update kode nya dengan menambahkan props pada argument pertama:
+
+    const AlbumDetails = (props) => {
+      return(
+        <View>
+          <Text>{props.album.title}</Text>
+        </View>    
+      );  
+    }
 
 ## 38 Reusable Component
 
