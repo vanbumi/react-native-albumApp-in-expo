@@ -652,22 +652,11 @@ Tambahkan style object:
       }, // ----------------------------> test on screen!
       headerTextStyle: {
         fontSize: 18
-      },
-      thumbnailStyle: {
-        width: 50,
-        height: 50
-      },
-      thumbnailContainerStyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginLeft: 10,
-        marginRight: 10
-      },
-      imageStyle: {
-        height: 350,
-        flex: 1,
-        width: null
-      } 
+      }, // ----------------------------> test on screen!
+      
+      ...
+
+      ... 
     };
 
 Import Image Tag
@@ -687,8 +676,9 @@ Contoh :
       const { thumbnailContainerStyle, 
         thumbnailStyle, 
         headerContentStyle, 
-        headerTextStyle, imageStyle 
-        } = styles;
+        headerTextStyle, 
+        imageStyle 
+      } = styles;
 
 Tambahkan Image style property:
 
@@ -697,8 +687,75 @@ Tambahkan Image style property:
       source={{ uri: thumbnail_image }
     }/>
 
+Tambahkan style:
+
+    thumbnailStyle: {
+      width: 50,
+      height: 50
+    },
+
 Test di screen! :)
 
+### Display Album
+
+Tambahkan style
+
+    thumbnailContainerStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 10,
+        marginRight: 10
+      },
+      imageStyle: {
+        height: 350,
+        flex: 1,
+        width: null
+      }
+
+Jangan lupa tambahkan sytle property pada View Tag.
+
+### Membuat Full Image
+
+Pada AlbumDetail.js tambahkan CardSection satu lagi dibawahnya:
+
+    <CardSection>
+      <Image 
+        source={{ uri: image }} 
+      
+
+Kemudian tambahkan uri image dan tambahkan juga di destruture code yang sudah dibuat.
+
+Test di screen, walahh image belum muncul? Karena kita belum menambahkan Width & Height image tsb.
+
+Tambahkan style property pada Image Tag:
+
+    <CardSection>
+      <Image
+        style={ imageStyle } 
+        source={{ uri: image }}
+      />    
+    </CardSection>
+        
+Jangan lupa untuk menambahkan property baru tersebut pada destructure code nya:
+
+    const { thumbnailContainerStyle, 
+      thumbnailStyle, 
+      headerContentStyle, 
+      headerTextStyle, 
+      imageStyle 
+    } = styles;
+
+Dan tambahkan juga imageStyle sbb:
+
+    imageStyle: {
+      height: 350,
+      flex: 1,
+      width: null
+    }
+
+Test di screen! :)
+
+ 
 
 
 ## 43 Positioning Element
