@@ -901,10 +901,38 @@ Dan lewatkan pada property TouchableOpacity:
 
     <TouchableOpacity onPress={ onPress } style={styles.buttonStyle}>          
 
+Import libraryLinking, cek : https://facebook.github.io/react-native/docs/linking.html
 
+    import { ..., ..., ..., Linking } from 'react-native';
 
-## 51 Link between mobile app
+Tambahkan kedalam destructure code :
 
-## 52 Set button text with props
+    const { title, artist, thumbnail_image, image, url } = album;
 
-## 53 Last
+Edit Button Tag
+
+    <Button onPress={() => Linking.openURL(url)} >
+
+Test di screen! :)
+
+## Set Button text dengan props
+
+Update Button seperti dibawah ini:
+
+    <Button onPress={() => Linking.openURL(url)} >
+      Buy Now
+    </Button>
+
+Tambahkan props children pada const Button:
+
+    const Button = ({ onPress, children }) => {
+
+Dan tambahkan variable children pada Button TouchableOpacity.
+
+    <TouchableOpacity onPress={ onPress } style={styles.buttonStyle}>
+      <Text style={styles.textStyle} >
+        {children}
+      </Text>
+    </TouchableOpacity>
+
+Test di screen! and done ! :)
