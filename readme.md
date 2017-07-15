@@ -784,17 +784,64 @@ Tambahkan style **flex: 1** pada root component, dalam Album App ini adalah main
 
 Fungsi dari flex: 1 adalah agar aplikasi memiliki fleksibel untuk berbagai ukuran device.
 
-## 43 Positioning Element
+## Membuat Link Button
 
-## 44 More Style
+Membuat link button yang akan menghubungkan aplikasi ke website eksternal dengan spesifik URL, dalam training ini adalah ke webiste amazon.
 
-## 45 Add Image
+### Membuat Component Button
 
-## 46 Display Image
+Pada folder src/components/Button.js, tambahkan boilerplate kode:
 
-## 47 Content Scrollable
+    import React from 'react';
+    import { Text, TouchableOpacity } from 'react-native';
 
-## 48 Create Button
+    const Button = () => {
+      return (
+          <Text>
+            Click here!
+          </Text>
+      );
+    };
+
+    export default Button;
+
+Pada file AlbumDetail import Button:
+
+    import Button from './Button';
+
+Dan di AlbumDetail buat CardSection baru:
+
+    <CardSection>
+        <Button />
+    </CardSection>
+
+Test di screen! :)
+
+### Import Button Library
+
+Buka website Doc react native facebook https://facebook.github.io/react-native/docs/getting-started.html
+
+Pilih component button TouchableOpacity: https://facebook.github.io/react-native/docs/touchableopacity.html
+
+Pada file Button.js import button TouchableOpacity tsb:
+
+    import { ..., TouchableOpacity } from 'react-native';
+
+Dan bungkus Text Tag menjadi sbb:
+
+    const Button = () => {
+      return (
+        <TouchableOpacity>
+          <Text>
+            Click here!
+          </Text>
+        </TouchableOpacity>
+      );
+    };
+
+Test di screen! :) 
+
+
 
 ## 49 Styling button with UX
 
