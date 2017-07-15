@@ -883,11 +883,25 @@ Tambahkan pada destructure baris dan tambahkan juga di Text Tag:
 
 Test pada screen! :)
 
-       
+## Menambahkan Event Handling pada Button
 
-## 49 Styling button with UX
+Tambahkan props onPress handler pada Button:
 
-## 50 Responding user input
+    <TouchableOpacity onPress={ ... } >
+
+Pada AlbumDetail tambahkan props function callback pada button :
+
+    <Button onPress={ } >
+
+Update pada Button.js
+
+    const Button = ({ onPress }) => {
+
+Dan lewatkan pada property TouchableOpacity:
+
+    <TouchableOpacity onPress={ onPress } style={styles.buttonStyle}>          
+
+
 
 ## 51 Link between mobile app
 
