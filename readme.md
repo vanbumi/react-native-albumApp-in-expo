@@ -935,4 +935,10 @@ Dan tambahkan variable children pada Button TouchableOpacity.
       </Text>
     </TouchableOpacity>
 
-Test di screen! and done ! :)
+Test di screen! 
+
+### Hasil Akhir
+
+![24-end-result](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_500,w_300/v1500090720/albums-app/24-end-result.png)
+
+and done ! :)
