@@ -714,7 +714,7 @@ Tambahkan style
 
 Jangan lupa tambahkan sytle property pada View Tag.
 
-### Membuat Full Image
+### Menambahkan Image
 
 Pada AlbumDetail.js tambahkan CardSection satu lagi dibawahnya:
 
@@ -755,8 +755,34 @@ Dan tambahkan juga imageStyle sbb:
 
 Test di screen! :)
 
- 
+## Membuat Content Scrollable
 
+Component yang harus di scroll dalam kasus ini adalah AlbumList karena halaman ini yang merender keseluruhan daftar masing-masing album.
+
+Pada file AlbumList import library baru ScrollView:
+
+    import { ScrollView } from 'react-native';
+
+Hapus Tag View karena di halaman ini kita menggunakan lagi Tag View, kemudian ganti render methode semual View Tag menjadi ScrollView Tag:
+
+    return (
+      <ScrollView>
+          {this.renderAlbums()}
+      </ScrollView>
+    );
+
+Test pada screen! :)
+
+Tambahkan style **flex: 1** pada root component, dalam Album App ini adalah main.js.
+
+    return (
+      <View style={{flex: 1}}>
+        <Header headerText={ 'Album Ku' } />
+        <AlbumList />
+      </View>
+    );
+
+Fungsi dari flex: 1 adalah agar aplikasi memiliki fleksibel untuk berbagai ukuran device.
 
 ## 43 Positioning Element
 
