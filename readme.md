@@ -6,8 +6,9 @@ Gambaran App yang akan dibuat:
 
 ![app-outline](http://res.cloudinary.com/medioxtra/image/upload/c_scale,h_422,w_300/v1499935793/albums-app/2-Outline_app.png)
 
-* Install Expo Desktop
-* Install Expo App
+* Install [Expo Desktop](https://docs.expo.io/versions/v16.0.0/introduction/installation.html).
+* Install Expo App -> Google Play Store or iOS App Store.
+* Install [Genymotion](https://docs.expo.io/versions/v16.0.0/guides/genymotion.html) (Opsional), [Cara Install disni](https://docs.genymotion.com/Content/01_Get_Started/Installation.htm)
 * In Expo Desktop create new project or in Commandline: 
     
     exp init namaApp 
