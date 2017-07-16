@@ -9,13 +9,14 @@ Gambaran App yang akan dibuat:
 * Install [Expo Desktop](https://docs.expo.io/versions/v16.0.0/introduction/installation.html).
 * Install Expo App -> Google Play Store or iOS App Store.
 * Install [Genymotion](https://docs.expo.io/versions/v16.0.0/guides/genymotion.html) (Opsional), [Cara Install disni](https://docs.genymotion.com/Content/01_Get_Started/Installation.htm)
-* In Expo Desktop create new project or in Commandline: 
+* PadaExpo Desktop: **Create New Project** 
+* Atau dengan Commandline sbb: 
     
     exp init namaApp 
 
-* Open in your IDE to edit.
+* Buka dengan Visual Code Studio dan lakukan update.
 
-## Create Header component
+## Membuat Header component
 
 Create new folder named src
 Create new folder named src/components
