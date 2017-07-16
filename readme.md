@@ -8,7 +8,7 @@ Gambaran App yang akan dibuat:
 
 * Install [Expo Desktop](https://docs.expo.io/versions/v16.0.0/introduction/installation.html).
 * Install Expo App -> Google Play Store or iOS App Store.
-* Install [Genymotion](https://docs.expo.io/versions/v16.0.0/guides/genymotion.html) (Opsional), [Cara Install disni](https://docs.genymotion.com/Content/01_Get_Started/Installation.htm)
+* Install [Genymotion].(https://docs.expo.io/versions/v16.0.0/guides/genymotion.html) (Opsional), [Cara Install disni].(https://docs.genymotion.com/Content/01_Get_Started/Installation.htm)
 * PadaExpo Desktop: **Create New Project** 
 * Atau dengan Commandline sbb: 
     
