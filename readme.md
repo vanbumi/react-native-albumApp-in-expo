@@ -16,6 +16,10 @@ Gambaran App yang akan dibuat:
 
 * Buka dengan Visual Code Studio dan lakukan update.
 
+* Are work with GIT ??? 
+[RN Auth Expo Home Work!](https://github.com/vanbumi/react-native-auth-expo)
+
+
 ## Membuat Header component
 
 Create new folder named src
